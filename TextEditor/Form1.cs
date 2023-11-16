@@ -22,10 +22,6 @@ namespace TextEditor
             statusStrip1.Items[0].Text = null; 
 
         }
-        private void blockNoteForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
