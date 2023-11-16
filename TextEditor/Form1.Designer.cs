@@ -50,6 +50,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,8 +95,9 @@
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(166, 26);
+            this.tsmiSave.Size = new System.Drawing.Size(224, 26);
             this.tsmiSave.Text = "Сохранить";
+            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
             // tsmiExit
             // 
@@ -223,6 +225,10 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Простой текст|*.txt|RTF-текст|*.rtf|Все файлы|*.*";
+            // 
             // blockNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,6 +274,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,39 @@ namespace TextEditor
         {
             if (richTextBox1.TextLength > 0)
                 richTextBox1.Cut();
+        }
+        private void saveFileAs() //метод "сохранить как"
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK && saveFileDialog1.FileName != null)
+            {
+                fileName = saveFileDialog1.FileName; //запоминаем имя файла
+                saveFile(); //вызываем метод "сохранить"
+            }
+        }
+        private void saveFile() //метод "сохранить"
+        {
+            try
+            {
+                richTextBox1.SaveFile(fileName, RichTextBoxStreamType.RichText);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось сохранить файл! Информация об ошибке: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void tsmiSave_Click(object sender, EventArgs e)
+        {
+            if (fileName == null) //если имя файла пусто
+            {
+                saveFileAs();
+            }
+            else
+            {
+                saveFile();
+            }
+
+            this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
+            statusStrip1.Items[0].Text = "Сохранено"; //статус сохранения в строку состояния changed = false;	//снимаем флаг изменений
         }
     }
 }
