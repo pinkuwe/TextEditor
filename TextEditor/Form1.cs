@@ -19,7 +19,7 @@ namespace TextEditor
         {
             InitializeComponent();
             this.Text = "Новый документ - BlokNote"; //заголовок окна – имя файла и программы
-            statusStrip1.Items[0].Text = null; //стока состояния - сохранение
+            statusStrip1.Items[0].Text = null; 
 
         }
 
@@ -30,29 +30,35 @@ namespace TextEditor
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+            // Установка флага о внесении изменений
             changed = true;
             statusStrip1.Items[0].Text = "Не сохранено";
         }
 
         private void tsmiCopy_Click(object sender, EventArgs e)
         {
+            // Меню Редактирование – Копировать:
             if (richTextBox1.TextLength != 0)
                 richTextBox1.Copy();
         }
 
         private void tsmiPaste_Click(object sender, EventArgs e)
         {
+            // Меню Редактирование – Вставить:
+
             if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
                 richTextBox1.Paste();
         }
 
         private void tsmiCut_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.TextLength > 0)
+            // Меню Редактирование – Вырезать:
+            if (richTextBox1.TextLength != 0)
                 richTextBox1.Cut();
         }
         private void saveFileAs() //метод "сохранить как"
         {
+            //если пользователь выбрал имя файла и нажал кнопку "ОК" в диалоге сохранения 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK && saveFileDialog1.FileName != null)
             {
                 fileName = saveFileDialog1.FileName; //запоминаем имя файла
@@ -63,6 +69,7 @@ namespace TextEditor
         {
             try
             {
+                //сохраняем содержимое текстового поля под выбранным именем
                 richTextBox1.SaveFile(fileName, RichTextBoxStreamType.RichText);
             }
             catch (Exception ex)
@@ -74,15 +81,17 @@ namespace TextEditor
         {
             if (fileName == null) //если имя файла пусто
             {
+                //вызываем метод "сохранить как"
                 saveFileAs();
             }
             else
             {
+                //вызываем метод "сохранить"
                 saveFile();
             }
 
             this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
-            statusStrip1.Items[0].Text = "Сохранено"; //статус сохранения в строку состояния changed = false;	//снимаем флаг изменений
+            statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
         }
     }
 }
