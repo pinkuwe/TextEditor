@@ -22,7 +22,6 @@ namespace TextEditor
             statusStrip1.Items[0].Text = null; 
 
         }
-
         private void blockNoteForm_Load(object sender, EventArgs e)
         {
 
@@ -56,6 +55,7 @@ namespace TextEditor
             if (richTextBox1.TextLength != 0)
                 richTextBox1.Cut();
         }
+
         private void saveFileAs() //метод "сохранить как"
         {
             //если пользователь выбрал имя файла и нажал кнопку "ОК" в диалоге сохранения 
@@ -65,6 +65,7 @@ namespace TextEditor
                 saveFile(); //вызываем метод "сохранить"
             }
         }
+
         private void saveFile() //метод "сохранить"
         {
             try
@@ -77,6 +78,7 @@ namespace TextEditor
                 MessageBox.Show("Не удалось сохранить файл! Информация об ошибке: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void tsmiSave_Click(object sender, EventArgs e)
         {
             if (fileName == null) //если имя файла пусто
@@ -92,6 +94,29 @@ namespace TextEditor
 
             this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
             statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
+        }
+        private bool closeFileQuery() // Запрос на закрытие файла
+        {
+            if (changed) // Если есть несохраненные изменения
+            {
+                DialogResult result = MessageBox.Show("Сохранить изменения?", "Предупреждение", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes) 
+                {
+                    if (fileName != null)
+                        saveFile();
+                    else
+                        saveFileAs();
+                }
+                else
+                {
+                    if (result == DialogResult.Cancel)
+                        return false; // Запрещает закрытие файла
+
+                    return true; // Разрешает закрытие файла
+                }
+            }
+            return true;
         }
     }
 }

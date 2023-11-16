@@ -51,6 +51,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(224, 26);
+            this.tsmiSave.Size = new System.Drawing.Size(166, 26);
             this.tsmiSave.Text = "Сохранить";
             this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
@@ -156,40 +157,40 @@
             // tsmiUndo
             // 
             this.tsmiUndo.Name = "tsmiUndo";
-            this.tsmiUndo.Size = new System.Drawing.Size(224, 26);
+            this.tsmiUndo.Size = new System.Drawing.Size(176, 26);
             this.tsmiUndo.Text = "Назад";
             // 
             // tsmiRedo
             // 
             this.tsmiRedo.Name = "tsmiRedo";
-            this.tsmiRedo.Size = new System.Drawing.Size(224, 26);
+            this.tsmiRedo.Size = new System.Drawing.Size(176, 26);
             this.tsmiRedo.Text = "Вперёд";
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(224, 26);
+            this.tsmiCopy.Size = new System.Drawing.Size(176, 26);
             this.tsmiCopy.Text = "Копировать";
             this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
-            this.tsmiCut.Size = new System.Drawing.Size(224, 26);
+            this.tsmiCut.Size = new System.Drawing.Size(176, 26);
             this.tsmiCut.Text = "Вырезать";
             this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(224, 26);
+            this.tsmiPaste.Size = new System.Drawing.Size(176, 26);
             this.tsmiPaste.Text = "Вставить";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(224, 26);
+            this.tsmiDelete.Size = new System.Drawing.Size(176, 26);
             this.tsmiDelete.Text = "Удалить";
             // 
             // tsmiHelp
@@ -229,6 +230,11 @@
             // 
             this.saveFileDialog1.Filter = "Простой текст|*.txt|RTF-текст|*.rtf|Все файлы|*.*";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Простой текст|*.txt|RTF-текст|*.rtf|Все файлы|*.*";
+            // 
             // blockNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,9 +244,9 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(500, 600);
             this.Name = "blockNoteForm";
             this.Text = "Text Editor";
-            this.Load += new System.EventHandler(this.blockNoteForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -275,6 +281,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
