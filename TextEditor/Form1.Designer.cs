@@ -33,6 +33,7 @@
             this.tsmiNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +77,7 @@
             this.tsmiNew,
             this.tsmiOpen,
             this.tsmiSave,
+            this.tsmiSaveAs,
             this.tsmiExit});
             this.tsmiАшду.Name = "tsmiАшду";
             this.tsmiАшду.Size = new System.Drawing.Size(59, 24);
@@ -84,26 +86,35 @@
             // tsmiNew
             // 
             this.tsmiNew.Name = "tsmiNew";
-            this.tsmiNew.Size = new System.Drawing.Size(166, 26);
+            this.tsmiNew.Size = new System.Drawing.Size(224, 26);
             this.tsmiNew.Text = "Создать";
+            this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
             // tsmiOpen
             // 
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(166, 26);
+            this.tsmiOpen.Size = new System.Drawing.Size(224, 26);
             this.tsmiOpen.Text = "Открыть";
+            this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(166, 26);
+            this.tsmiSave.Size = new System.Drawing.Size(224, 26);
             this.tsmiSave.Text = "Сохранить";
             this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
+            // 
+            // tsmiSaveAs
+            // 
+            this.tsmiSaveAs.Name = "tsmiSaveAs";
+            this.tsmiSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.tsmiSaveAs.Text = "Сохранить как";
+            this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(166, 26);
+            this.tsmiExit.Size = new System.Drawing.Size(224, 26);
             this.tsmiExit.Text = "Выход";
             // 
             // tsmiFormat
@@ -228,12 +239,12 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Простой текст|*.txt|RTF-текст|*.rtf|Все файлы|*.*";
+            this.saveFileDialog1.Filter = "RTF-текст|*.rtf| Простой текст|*.txt|Все файлы|*.*";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Простой текст|*.txt|RTF-текст|*.rtf|Все файлы|*.*";
+            this.openFileDialog1.Filter = "RTF-текст|*.rtf| Простой текст|*.txt|Все файлы|*.*";
             // 
             // blockNoteForm
             // 
@@ -263,7 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiSave;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExit;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveAs;
         private System.Windows.Forms.ToolStripMenuItem tsmiFormat;
         private System.Windows.Forms.ToolStripMenuItem tsmiFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiFill;
@@ -282,6 +293,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExit;
     }
 }
 
