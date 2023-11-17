@@ -88,11 +88,13 @@ namespace TextEditor
                 //вызываем метод "сохранить"
                 saveFile();
             }
-        }    
+        }  
+        
         private void tsmiSaveAs_Click(object sender, EventArgs e)
         {
             saveFileAs();
         }
+
         private bool closeFileQuery() // Запрос на закрытие файла
         {
             if (changed) // Если есть несохраненные изменения
@@ -116,6 +118,7 @@ namespace TextEditor
             }
             return true;
         }
+
         private void afterSaving()
         {
             changed = false;
@@ -150,6 +153,7 @@ namespace TextEditor
                 afterSaving();
             }
         }
+
         private void newFile()
         {
             richTextBox1.Clear();

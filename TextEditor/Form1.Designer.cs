@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tsmiАшду = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +61,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiАшду,
+            this.tsmiFile,
             this.tsmiFormat,
             this.tsmiEdit,
             this.tsmiHelp});
@@ -71,17 +71,17 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // tsmiАшду
+            // tsmiFile
             // 
-            this.tsmiАшду.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiNew,
             this.tsmiOpen,
             this.tsmiSave,
             this.tsmiSaveAs,
             this.tsmiExit});
-            this.tsmiАшду.Name = "tsmiАшду";
-            this.tsmiАшду.Size = new System.Drawing.Size(59, 24);
-            this.tsmiАшду.Text = "Файл";
+            this.tsmiFile.Name = "tsmiFile";
+            this.tsmiFile.Size = new System.Drawing.Size(59, 24);
+            this.tsmiFile.Text = "Файл";
             // 
             // tsmiNew
             // 
@@ -131,25 +131,25 @@
             // tsmiFont
             // 
             this.tsmiFont.Name = "tsmiFont";
-            this.tsmiFont.Size = new System.Drawing.Size(197, 26);
+            this.tsmiFont.Size = new System.Drawing.Size(224, 26);
             this.tsmiFont.Text = "Шрифт";
             // 
             // tsmiFill
             // 
             this.tsmiFill.Name = "tsmiFill";
-            this.tsmiFill.Size = new System.Drawing.Size(197, 26);
+            this.tsmiFill.Size = new System.Drawing.Size(224, 26);
             this.tsmiFill.Text = "Заливка";
             // 
             // tsmiAlignment
             // 
             this.tsmiAlignment.Name = "tsmiAlignment";
-            this.tsmiAlignment.Size = new System.Drawing.Size(197, 26);
+            this.tsmiAlignment.Size = new System.Drawing.Size(224, 26);
             this.tsmiAlignment.Text = "Выравнивание";
             // 
             // tsmiMarker
             // 
             this.tsmiMarker.Name = "tsmiMarker";
-            this.tsmiMarker.Size = new System.Drawing.Size(197, 26);
+            this.tsmiMarker.Size = new System.Drawing.Size(224, 26);
             this.tsmiMarker.Text = "Маркер";
             // 
             // tsmiEdit
@@ -270,7 +270,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiАшду;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiSave;
