@@ -122,8 +122,11 @@ namespace TextEditor
         private void afterSaving()
         {
             changed = false;
-            this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
-            statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
+            if (fileName != null)
+                this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
+            else
+                this.Text = "Новый файл";
+            statusStrip1.Items[0].Text = "Сохранено - BlockNote"; //снимаем флаг изменений
         }
 
         private void openFile() // Метод открытия файла
@@ -166,8 +169,7 @@ namespace TextEditor
             if(closeFileQuery())
             {
                 newFile();
-                this.Text = "Новый файл - BlockNote";
-                statusStrip1.Items[0].Text = "Не сохраненно";
+                afterSaving();
             }
         }
     }
