@@ -68,6 +68,7 @@ namespace TextEditor
             {
                 //сохраняем содержимое текстового поля под выбранным именем
                 richTextBox1.SaveFile(fileName, RichTextBoxStreamType.RichText);
+                afterSaving();
             }
             catch (Exception ex)
             {
@@ -87,9 +88,10 @@ namespace TextEditor
                 //вызываем метод "сохранить"
                 saveFile();
             }
-
-            this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
-            statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
+        }    
+        private void tsmiSaveAs_Click(object sender, EventArgs e)
+        {
+            saveFileAs();
         }
         private bool closeFileQuery() // Запрос на закрытие файла
         {
@@ -113,6 +115,56 @@ namespace TextEditor
                 }
             }
             return true;
+        }
+        private void afterSaving()
+        {
+            changed = false;
+            this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
+            statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
+        }
+
+        private void openFile() // Метод открытия файла
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.FileName != null)
+            {
+                try
+                {
+                    // Открытие файла *.rtf
+                    richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.RichText);
+                }
+                catch (System.FormatException) 
+                {
+                    // Открытие файла *.* => *.txt
+                    richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                }
+                changed = false;
+                fileName = openFileDialog1.FileName;
+            }
+        }
+
+        private void tsmiOpen_Click(object sender, EventArgs e)
+        {
+            if (closeFileQuery())
+            {
+                openFile();
+                afterSaving();
+            }
+        }
+        private void newFile()
+        {
+            richTextBox1.Clear();
+            changed = false;
+            fileName = null;
+        }
+
+        private void tsmiNew_Click(object sender, EventArgs e)
+        {
+            if(closeFileQuery())
+            {
+                newFile();
+                this.Text = "Новый файл - BlockNote";
+                statusStrip1.Items[0].Text = "Не сохраненно";
+            }
         }
     }
 }
