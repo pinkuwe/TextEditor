@@ -1,0 +1,10 @@
+C:\Users\doman\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.exe.config
+C:\Users\doman\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.exe
+C:\Users\doman\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.pdb
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csproj.AssemblyReference.cache
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.blockNoteForm.resources
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.Properties.Resources.resources
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csproj.GenerateResource.cache
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csproj.CoreCompileInputs.cache
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.exe
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.pdb
