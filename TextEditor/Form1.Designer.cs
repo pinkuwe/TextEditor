@@ -53,6 +53,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.tsmiToLeft = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToCenter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToRight = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +71,7 @@
             this.tsmiHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,41 +84,41 @@
             this.tsmiSaveAs,
             this.tsmiExit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(59, 24);
+            this.tsmiFile.Size = new System.Drawing.Size(59, 26);
             this.tsmiFile.Text = "Файл";
             // 
             // tsmiNew
             // 
             this.tsmiNew.Name = "tsmiNew";
-            this.tsmiNew.Size = new System.Drawing.Size(224, 26);
+            this.tsmiNew.Size = new System.Drawing.Size(192, 26);
             this.tsmiNew.Text = "Создать";
             this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
             // tsmiOpen
             // 
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(224, 26);
+            this.tsmiOpen.Size = new System.Drawing.Size(192, 26);
             this.tsmiOpen.Text = "Открыть";
             this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(224, 26);
+            this.tsmiSave.Size = new System.Drawing.Size(192, 26);
             this.tsmiSave.Text = "Сохранить";
             this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
             // tsmiSaveAs
             // 
             this.tsmiSaveAs.Name = "tsmiSaveAs";
-            this.tsmiSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.tsmiSaveAs.Size = new System.Drawing.Size(192, 26);
             this.tsmiSaveAs.Text = "Сохранить как";
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(224, 26);
+            this.tsmiExit.Size = new System.Drawing.Size(192, 26);
             this.tsmiExit.Text = "Выход";
             // 
             // tsmiFormat
@@ -125,7 +129,7 @@
             this.tsmiAlignment,
             this.tsmiMarker});
             this.tsmiFormat.Name = "tsmiFormat";
-            this.tsmiFormat.Size = new System.Drawing.Size(77, 24);
+            this.tsmiFormat.Size = new System.Drawing.Size(77, 26);
             this.tsmiFormat.Text = "Формат";
             // 
             // tsmiFont
@@ -133,6 +137,7 @@
             this.tsmiFont.Name = "tsmiFont";
             this.tsmiFont.Size = new System.Drawing.Size(224, 26);
             this.tsmiFont.Text = "Шрифт";
+            this.tsmiFont.Click += new System.EventHandler(this.tsmiFont_Click);
             // 
             // tsmiFill
             // 
@@ -142,6 +147,10 @@
             // 
             // tsmiAlignment
             // 
+            this.tsmiAlignment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToLeft,
+            this.tsmiToCenter,
+            this.tsmiToRight});
             this.tsmiAlignment.Name = "tsmiAlignment";
             this.tsmiAlignment.Size = new System.Drawing.Size(224, 26);
             this.tsmiAlignment.Text = "Выравнивание";
@@ -151,6 +160,7 @@
             this.tsmiMarker.Name = "tsmiMarker";
             this.tsmiMarker.Size = new System.Drawing.Size(224, 26);
             this.tsmiMarker.Text = "Маркер";
+            this.tsmiMarker.Click += new System.EventHandler(this.tsmiMarker_Click);
             // 
             // tsmiEdit
             // 
@@ -162,52 +172,52 @@
             this.tsmiPaste,
             this.tsmiDelete});
             this.tsmiEdit.Name = "tsmiEdit";
-            this.tsmiEdit.Size = new System.Drawing.Size(137, 24);
+            this.tsmiEdit.Size = new System.Drawing.Size(137, 26);
             this.tsmiEdit.Text = "Редактирование";
             // 
             // tsmiUndo
             // 
             this.tsmiUndo.Name = "tsmiUndo";
-            this.tsmiUndo.Size = new System.Drawing.Size(176, 26);
+            this.tsmiUndo.Size = new System.Drawing.Size(224, 26);
             this.tsmiUndo.Text = "Назад";
             // 
             // tsmiRedo
             // 
             this.tsmiRedo.Name = "tsmiRedo";
-            this.tsmiRedo.Size = new System.Drawing.Size(176, 26);
+            this.tsmiRedo.Size = new System.Drawing.Size(224, 26);
             this.tsmiRedo.Text = "Вперёд";
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(176, 26);
+            this.tsmiCopy.Size = new System.Drawing.Size(224, 26);
             this.tsmiCopy.Text = "Копировать";
             this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
-            this.tsmiCut.Size = new System.Drawing.Size(176, 26);
+            this.tsmiCut.Size = new System.Drawing.Size(224, 26);
             this.tsmiCut.Text = "Вырезать";
             this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(176, 26);
+            this.tsmiPaste.Size = new System.Drawing.Size(224, 26);
             this.tsmiPaste.Text = "Вставить";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(176, 26);
+            this.tsmiDelete.Size = new System.Drawing.Size(224, 26);
             this.tsmiDelete.Text = "Удалить";
             // 
             // tsmiHelp
             // 
             this.tsmiHelp.Name = "tsmiHelp";
-            this.tsmiHelp.Size = new System.Drawing.Size(81, 24);
+            this.tsmiHelp.Size = new System.Drawing.Size(81, 26);
             this.tsmiHelp.Text = "Справка";
             // 
             // statusStrip1
@@ -230,9 +240,9 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 30);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(482, 499);
+            this.richTextBox1.Size = new System.Drawing.Size(482, 497);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -245,6 +255,31 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "RTF-текст|*.rtf| Простой текст|*.txt|Все файлы|*.*";
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.ShowColor = true;
+            // 
+            // tsmiToLeft
+            // 
+            this.tsmiToLeft.Name = "tsmiToLeft";
+            this.tsmiToLeft.Size = new System.Drawing.Size(224, 26);
+            this.tsmiToLeft.Text = "По левому краю";
+            this.tsmiToLeft.Click += new System.EventHandler(this.tsmiToLeft_Click);
+            // 
+            // tsmiToCenter
+            // 
+            this.tsmiToCenter.Name = "tsmiToCenter";
+            this.tsmiToCenter.Size = new System.Drawing.Size(224, 26);
+            this.tsmiToCenter.Text = "По центру";
+            this.tsmiToCenter.Click += new System.EventHandler(this.tsmiToCenter_Click);
+            // 
+            // tsmiToRight
+            // 
+            this.tsmiToRight.Name = "tsmiToRight";
+            this.tsmiToRight.Size = new System.Drawing.Size(224, 26);
+            this.tsmiToRight.Text = "По правому краю";
+            this.tsmiToRight.Click += new System.EventHandler(this.tsmiToRight_Click);
             // 
             // blockNoteForm
             // 
@@ -294,6 +329,10 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToLeft;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToCenter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToRight;
     }
 }
 

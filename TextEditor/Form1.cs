@@ -88,12 +88,9 @@ namespace TextEditor
                 //вызываем метод "сохранить"
                 saveFile();
             }
-        }  
-        
-        private void tsmiSaveAs_Click(object sender, EventArgs e)
-        {
-            saveFileAs();
         }
+
+        private void tsmiSaveAs_Click(object sender, EventArgs e) => saveFileAs();
 
         private bool closeFileQuery() // Запрос на закрытие файла
         {
@@ -125,8 +122,8 @@ namespace TextEditor
             if (fileName != null)
                 this.Text = Path.GetFileName(fileName) + " - BlokNot"; //выносим в заголовок окна имя файла без пути
             else
-                this.Text = "Новый файл";
-            statusStrip1.Items[0].Text = "Сохранено - BlockNote"; //снимаем флаг изменений
+                this.Text = "Новый файл - BlockNote";
+            statusStrip1.Items[0].Text = "Сохранено"; //снимаем флаг изменений
         }
 
         private void openFile() // Метод открытия файла
@@ -172,5 +169,23 @@ namespace TextEditor
                 afterSaving();
             }
         }
+
+        private void tsmiFont_Click(object sender, EventArgs e) 
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.OK) //если пользователь нажал кнопку ОК в диалоге
+            {
+                richTextBox1.SelectionFont = fontDialog1.Font; //изменяем шрифт выделенного фрагмента на указанный в диалоге
+                richTextBox1.SelectionColor = fontDialog1.Color; //изменяем цвет выделенного фрагмента на указанный в диалоге
+            }
+        }
+
+        private void tsmiToLeft_Click(object sender, EventArgs e) => richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+
+        private void tsmiToCenter_Click(object sender, EventArgs e) => richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+
+        private void tsmiToRight_Click(object sender, EventArgs e) => richTextBox1.SelectionAlignment= HorizontalAlignment.Right;
+
+        private void tsmiMarker_Click(object sender, EventArgs e) => richTextBox1.SelectionBullet = !richTextBox1.SelectionBullet;
+
     }
 }
