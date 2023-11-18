@@ -187,5 +187,26 @@ namespace TextEditor
 
         private void tsmiMarker_Click(object sender, EventArgs e) => richTextBox1.SelectionBullet = !richTextBox1.SelectionBullet;
 
+        private void tsmiEdit_Click(object sender, EventArgs e)
+        {
+            //доступность подпунктов меню определяется возможностью отмены (повтора)
+            tsmiUndo.Enabled = richTextBox1.CanUndo;
+            tsmiRedo.Enabled = richTextBox1.CanRedo;
+        }
+
+        private void tsmiDelete_Click(object sender, EventArgs e) => richTextBox1.SelectedText = "";  //присваиваем выделенному фрагменту текста пустое значение
+
+        private void tsmiFill_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK) 
+                // Замена цвета фона на выбранный в диалоге
+                richTextBox1.SelectionBackColor = colorDialog1.Color;
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            if (closeFileQuery())
+                Application.Exit();
+        }
     }
 }
