@@ -135,7 +135,7 @@ namespace TextEditor
                     // Открытие файла *.rtf
                     richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.RichText);
                 }
-                catch (System.FormatException) 
+                catch (System.ArgumentException) 
                 {
                     // Открытие файла *.* => *.txt
                     richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
@@ -203,10 +203,17 @@ namespace TextEditor
                 richTextBox1.SelectionBackColor = colorDialog1.Color;
         }
 
-        private void tsmiExit_Click(object sender, EventArgs e)
+        private void tsmiExit_Click(object sender, EventArgs e) => Application.Exit();
+
+        private void blockNoteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (closeFileQuery())
-                Application.Exit();
+            if (!closeFileQuery()) //Запрос на отмену выхода
+                e.Cancel = true;
+        }
+
+        private void blockNoteForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
