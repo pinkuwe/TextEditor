@@ -117,31 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>147, 18</value>
-  </metadata>
-  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>284, 18</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>449, 18</value>
-  </metadata>
-  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>619, 18</value>
-  </metadata>
-  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>759, 18</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsmiCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAIxJREFUSEvdlEEKgDAQA/s8xf9/QP2Hbg+9RIeUVQQ7kIMkY8GCZSiWyB45krFs
-        kTuxN5buYZbPD8jeSf3Uc+RCGzSe3MkaudDKhj73gp4WODSgpwUODehpgUMDelrg0ICeFjg0oKcFDg3o
-        aYFDA3pa4NCAnhY4NHR7/z/g9Z+dUn+5mUPqy6fIEJRyAuajprFqn3iHAAAAAElFTkSuQmCC
-</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>1. Создание нового документа:
+   - При запуске программы открывается новое окно с пустым текстовым полем.
+   - Заголовок окна устанавливается как "Новый документ - BlokNote".
+
+2. Редактирование текста:
+   - Статусная строка показывает текст "Не сохранено".
+
+3. Копирование, вставка и вырезание текста:
+   - Меню "Редактирование" содержит следующие пункты:
+     - "Копировать": Копирует выделенный текст в буфер обмена.
+     - "Вставить": Вставляет текст из буфера обмена в место текущего курсора.
+     - "Вырезать": Вырезает выделенный текст и помещает его в буфер обмена.
+
+4. Сохранение файла:
+   Меню "Файл" содержит следующие пункты:
+     - "Сохранить": Сохраняет содержимое текстового поля под выбранным именем файла.
+     - "Сохранить как": Открывает диалоговое окно сохранения файла, где пользователь может выбрать имя и место сохранения файла.
+     - "Открыть": Открывает диалоговое окно выбора файла для открытия.
+     - "Новый": Создает новый документ, очищая текстовое поле.
+     - "Выход": Закрывает программу.
+
+5. Изменение форматирования текста:
+   Меню "Формат" содержит следующие пункты:
+     - "Шрифт": Открывает диалоговое окно выбора шрифта и цвета. Изменяет шрифт и цвет выделенного фрагмента текста.
+     - "Выравнивание слева": Выравнивает выделенный текст по левому краю.
+     - "Выравнивание по центру": Выравнивает выделенный текст по центру.
+     - "Выравнивание справа": Выравнивает выделенный текст по правому краю.
+     - "Маркер": Включает или выключает маркеры для выделенного фрагмента текста.
+     - "Удалить": Удаляет выделенный фрагмент текста.
+     - "Заливка": Открывает диалоговое окно выбора цвета фона. Заменяет цвет фона выделенного фрагмента текста на выбранный цвет.</value>
   </data>
 </root>

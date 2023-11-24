@@ -18,3 +18,4 @@ C:\Users\r21student\Desktop\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.Ge
 C:\Users\r21student\Desktop\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
 C:\Users\r21student\Desktop\TextEditor\TextEditor\obj\Debug\TextEditor.exe
 C:\Users\r21student\Desktop\TextEditor\TextEditor\obj\Debug\TextEditor.pdb
+C:\Users\doman\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.helpForm.resources

@@ -215,5 +215,11 @@ namespace TextEditor
         {
             
         }
+
+        private void tsmiHelp_Click(object sender, EventArgs e)
+        {
+            helpForm hf = new helpForm();
+            hf.Show();
+        }
     }
 }

@@ -33,7 +33,6 @@ namespace TextEditor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(blockNoteForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +47,7 @@ namespace TextEditor
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFill = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlignment = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +75,8 @@ namespace TextEditor
             this.tsmiHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(363, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(484, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,16 +89,8 @@ namespace TextEditor
             this.tsmiSaveAs,
             this.tsmiExit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(48, 20);
+            this.tsmiFile.Size = new System.Drawing.Size(59, 24);
             this.tsmiFile.Text = "Файл";
-            // 
-            // tsmiExit
-            // 
-            this.tsmiExit.Image = global::TextEditor.Properties.Resources.cross;
-            this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(184, 26);
-            this.tsmiExit.Text = "Выход";
-            this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
             // tsmiFormat
             // 
@@ -108,7 +100,7 @@ namespace TextEditor
             this.tsmiAlignment,
             this.tsmiMarker});
             this.tsmiFormat.Name = "tsmiFormat";
-            this.tsmiFormat.Size = new System.Drawing.Size(62, 20);
+            this.tsmiFormat.Size = new System.Drawing.Size(77, 24);
             this.tsmiFormat.Text = "Формат";
             // 
             // tsmiEdit
@@ -121,41 +113,42 @@ namespace TextEditor
             this.tsmiPaste,
             this.tsmiDelete});
             this.tsmiEdit.Name = "tsmiEdit";
-            this.tsmiEdit.Size = new System.Drawing.Size(108, 20);
+            this.tsmiEdit.Size = new System.Drawing.Size(137, 24);
             this.tsmiEdit.Text = "Редактирование";
             this.tsmiEdit.Click += new System.EventHandler(this.tsmiEdit_Click);
             // 
             // tsmiHelp
             // 
             this.tsmiHelp.Name = "tsmiHelp";
-            this.tsmiHelp.Size = new System.Drawing.Size(65, 20);
+            this.tsmiHelp.Size = new System.Drawing.Size(81, 24);
             this.tsmiHelp.Text = "Справка";
+            this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 452);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 557);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(363, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(484, 26);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(363, 428);
+            this.richTextBox1.Size = new System.Drawing.Size(484, 529);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -177,7 +170,7 @@ namespace TextEditor
             // 
             this.tsmiNew.Image = global::TextEditor.Properties.Resources.add;
             this.tsmiNew.Name = "tsmiNew";
-            this.tsmiNew.Size = new System.Drawing.Size(184, 26);
+            this.tsmiNew.Size = new System.Drawing.Size(192, 26);
             this.tsmiNew.Text = "Создать";
             this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
@@ -185,7 +178,7 @@ namespace TextEditor
             // 
             this.tsmiOpen.Image = global::TextEditor.Properties.Resources.folder;
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(184, 26);
+            this.tsmiOpen.Size = new System.Drawing.Size(192, 26);
             this.tsmiOpen.Text = "Открыть";
             this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
@@ -193,7 +186,7 @@ namespace TextEditor
             // 
             this.tsmiSave.Image = global::TextEditor.Properties.Resources.diskette;
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(184, 26);
+            this.tsmiSave.Size = new System.Drawing.Size(192, 26);
             this.tsmiSave.Text = "Сохранить";
             this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
@@ -201,15 +194,23 @@ namespace TextEditor
             // 
             this.tsmiSaveAs.Image = global::TextEditor.Properties.Resources.diskette__1_;
             this.tsmiSaveAs.Name = "tsmiSaveAs";
-            this.tsmiSaveAs.Size = new System.Drawing.Size(184, 26);
+            this.tsmiSaveAs.Size = new System.Drawing.Size(192, 26);
             this.tsmiSaveAs.Text = "Сохранить как";
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
+            // 
+            // tsmiExit
+            // 
+            this.tsmiExit.Image = global::TextEditor.Properties.Resources.cross;
+            this.tsmiExit.Name = "tsmiExit";
+            this.tsmiExit.Size = new System.Drawing.Size(192, 26);
+            this.tsmiExit.Text = "Выход";
+            this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
             // tsmiFont
             // 
             this.tsmiFont.Image = global::TextEditor.Properties.Resources.musical_symbol_of_letter_f;
             this.tsmiFont.Name = "tsmiFont";
-            this.tsmiFont.Size = new System.Drawing.Size(155, 22);
+            this.tsmiFont.Size = new System.Drawing.Size(197, 26);
             this.tsmiFont.Text = "Шрифт";
             this.tsmiFont.Click += new System.EventHandler(this.tsmiFont_Click);
             // 
@@ -217,7 +218,7 @@ namespace TextEditor
             // 
             this.tsmiFill.Image = global::TextEditor.Properties.Resources.color;
             this.tsmiFill.Name = "tsmiFill";
-            this.tsmiFill.Size = new System.Drawing.Size(155, 22);
+            this.tsmiFill.Size = new System.Drawing.Size(197, 26);
             this.tsmiFill.Text = "Заливка";
             this.tsmiFill.Click += new System.EventHandler(this.tsmiFill_Click);
             // 
@@ -229,14 +230,14 @@ namespace TextEditor
             this.tsmiToRight});
             this.tsmiAlignment.Image = global::TextEditor.Properties.Resources.justification;
             this.tsmiAlignment.Name = "tsmiAlignment";
-            this.tsmiAlignment.Size = new System.Drawing.Size(155, 22);
+            this.tsmiAlignment.Size = new System.Drawing.Size(197, 26);
             this.tsmiAlignment.Text = "Выравнивание";
             // 
             // tsmiToLeft
             // 
             this.tsmiToLeft.Image = global::TextEditor.Properties.Resources.left_align;
             this.tsmiToLeft.Name = "tsmiToLeft";
-            this.tsmiToLeft.Size = new System.Drawing.Size(173, 22);
+            this.tsmiToLeft.Size = new System.Drawing.Size(217, 26);
             this.tsmiToLeft.Text = "По левому краю";
             this.tsmiToLeft.Click += new System.EventHandler(this.tsmiToLeft_Click);
             // 
@@ -244,7 +245,7 @@ namespace TextEditor
             // 
             this.tsmiToCenter.Image = global::TextEditor.Properties.Resources.center_align;
             this.tsmiToCenter.Name = "tsmiToCenter";
-            this.tsmiToCenter.Size = new System.Drawing.Size(173, 22);
+            this.tsmiToCenter.Size = new System.Drawing.Size(217, 26);
             this.tsmiToCenter.Text = "По центру";
             this.tsmiToCenter.Click += new System.EventHandler(this.tsmiToCenter_Click);
             // 
@@ -252,7 +253,7 @@ namespace TextEditor
             // 
             this.tsmiToRight.Image = global::TextEditor.Properties.Resources.right_align;
             this.tsmiToRight.Name = "tsmiToRight";
-            this.tsmiToRight.Size = new System.Drawing.Size(173, 22);
+            this.tsmiToRight.Size = new System.Drawing.Size(217, 26);
             this.tsmiToRight.Text = "По правому краю";
             this.tsmiToRight.Click += new System.EventHandler(this.tsmiToRight_Click);
             // 
@@ -260,7 +261,7 @@ namespace TextEditor
             // 
             this.tsmiMarker.Image = global::TextEditor.Properties.Resources.degree;
             this.tsmiMarker.Name = "tsmiMarker";
-            this.tsmiMarker.Size = new System.Drawing.Size(155, 22);
+            this.tsmiMarker.Size = new System.Drawing.Size(197, 26);
             this.tsmiMarker.Text = "Маркер";
             this.tsmiMarker.Click += new System.EventHandler(this.tsmiMarker_Click);
             // 
@@ -268,21 +269,21 @@ namespace TextEditor
             // 
             this.tsmiUndo.Image = global::TextEditor.Properties.Resources.undo;
             this.tsmiUndo.Name = "tsmiUndo";
-            this.tsmiUndo.Size = new System.Drawing.Size(139, 22);
+            this.tsmiUndo.Size = new System.Drawing.Size(176, 26);
             this.tsmiUndo.Text = "Назад";
             // 
             // tsmiRedo
             // 
             this.tsmiRedo.Image = global::TextEditor.Properties.Resources.redo;
             this.tsmiRedo.Name = "tsmiRedo";
-            this.tsmiRedo.Size = new System.Drawing.Size(139, 22);
+            this.tsmiRedo.Size = new System.Drawing.Size(176, 26);
             this.tsmiRedo.Text = "Вперёд";
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Image = ((System.Drawing.Image)(resources.GetObject("tsmiCopy.Image")));
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(139, 22);
+            this.tsmiCopy.Size = new System.Drawing.Size(176, 26);
             this.tsmiCopy.Text = "Копировать";
             this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
@@ -290,7 +291,7 @@ namespace TextEditor
             // 
             this.tsmiCut.Image = global::TextEditor.Properties.Resources.scissors;
             this.tsmiCut.Name = "tsmiCut";
-            this.tsmiCut.Size = new System.Drawing.Size(139, 22);
+            this.tsmiCut.Size = new System.Drawing.Size(176, 26);
             this.tsmiCut.Text = "Вырезать";
             this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
@@ -298,7 +299,7 @@ namespace TextEditor
             // 
             this.tsmiPaste.Image = global::TextEditor.Properties.Resources.copy;
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(139, 22);
+            this.tsmiPaste.Size = new System.Drawing.Size(176, 26);
             this.tsmiPaste.Text = "Вставить";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
@@ -306,23 +307,24 @@ namespace TextEditor
             // 
             this.tsmiDelete.Image = global::TextEditor.Properties.Resources.delete;
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(139, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(176, 26);
             this.tsmiDelete.Text = "Удалить";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // blockNoteForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 474);
+            this.ClientSize = new System.Drawing.Size(484, 583);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(379, 495);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(499, 598);
             this.Name = "blockNoteForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.blockNoteForm_FormClosing);
             this.Load += new System.EventHandler(this.blockNoteForm_Load);
