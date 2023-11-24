@@ -327,7 +327,6 @@ namespace TextEditor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.blockNoteForm_FormClosing);
-            this.Load += new System.EventHandler(this.blockNoteForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

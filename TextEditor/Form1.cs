@@ -211,11 +211,6 @@ namespace TextEditor
                 e.Cancel = true;
         }
 
-        private void blockNoteForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void tsmiHelp_Click(object sender, EventArgs e)
         {
             helpForm hf = new helpForm();
